@@ -1,0 +1,18 @@
+type Query {
+    property: [Property] @all
+}
+
+type Mutation {
+    createProperty(input: CreatePropertyInput @spread): Property @create
+}
+
+type Property {
+    id: ID
+    key: String
+    active: Boolean
+    value: String
+    slug: String
+    parentable_type: String
+    parentable_id: String
+    parentable: Product @morphTo
+}

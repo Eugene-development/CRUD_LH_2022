@@ -1,0 +1,27 @@
+extend type Query {
+    category: [Category] @all
+}
+
+extend type Mutation {
+    createCategory(input: CreateCategoryInput @spread): Category @create
+}
+
+
+type Category {
+    id: ID
+    key: String
+    active: Boolean
+    value: String
+    slug: String
+}
+
+
+input CreateCategoryInput {
+    key: String!
+    value: String!
+    slug: String
+}
+#
+#input CreateCategoryBelongsTo {
+#    create: CreateCategoryInput
+#}
