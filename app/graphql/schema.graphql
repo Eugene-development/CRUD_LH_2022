@@ -46,7 +46,7 @@ type Mutation {
 }
 
 input CreateCategoryInput {
-    key: String!,
+    key: String!
     value: String!
 }
 #
@@ -57,11 +57,12 @@ input CreateCategoryInput {
 
 
 input CreateProductInput {
-    key: String!,
-    value: String!,
-    active: Boolean,
-    parentable_type: String,
-    parentable_id: Int,
+    key: String!
+    active: Boolean
+    value: String!
+    slug: String
+    parentable_type: String
+    parentable_id: Int
     #    category: CreateCategoryBelongsTo
     property: CreatePropertyMorphMany
 
@@ -73,8 +74,9 @@ input CreatePropertyMorphMany {
 }
 
 input CreatePropertyInput {
-    key: String,
+    key: String
     value: String!
+    slug: String!
 }
 
 
@@ -105,18 +107,19 @@ type Product {
     key: Int
     active: Boolean
     value: String
+    slug: String
     parentable_type: String
     parentable_id: String
     property: [Property!] @morphMany
     parentable: Parentable! @morphTo
 }
 
-
 type Property {
     id: ID
     key: String
     active: Boolean
     value: String
+    slug: String
     parentable_type: String
     parentable_id: String
     parentable: Product @morphTo
@@ -126,8 +129,8 @@ type Category {
     id: ID
     key: String
     active: Boolean
-    uuid: String
     value: String
+    slug: String
 }
 
 union Parentable = Product | Property | Category
