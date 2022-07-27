@@ -15,12 +15,12 @@ class Category extends Model
 
     protected $table = 'category';
 
-    protected $primaryKey = 'uuid';
-
-    public function getKeyType()
-    {
-        return 'string';
-    }
+//    protected $primaryKey = 'uuid';
+//
+//    public function getKeyType()
+//    {
+//        return 'string';
+//    }
 
 
     public function product(): MorphMany

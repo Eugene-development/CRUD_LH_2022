@@ -20,7 +20,7 @@ type Query {
 
 
     products(orderBy: _ @orderBy(columns: ["value"])): [Product] @all
-    product(uuid: String @eq): Product @find
+    product(id:ID! @eq): Product @find
     product_where(key: Int @where(operator: "1234")): [Product] @all
     product_w(key: Int @eq, active: Boolean @eq): [Product] @all
     property: [Property] @all
@@ -30,8 +30,8 @@ type Query {
 
 
 type Mutation {
-    updateProduct(uuid: String!, value: String!): Product @update
-    deleteProduct(uuid: String!): Product @delete
+    updateProduct(id: ID!, value: String!): Product @update
+    deleteProduct(id: ID!): Product @delete
 
 
 
@@ -45,9 +45,19 @@ type Mutation {
 
 }
 
+#Не работает
+input UpdateProductInput {
+    id: ID!
+    value: String!
+}
+input DeleteProductInput {
+    id: ID!
+}
+
 input CreateCategoryInput {
     key: String!
     value: String!
+    slug: String
 }
 #
 #input CreateCategoryBelongsTo {

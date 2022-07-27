@@ -15,12 +15,12 @@ class Property extends Model
 
     protected $table = 'property';
 
-    protected $primaryKey = 'uuid';
-
-    public function getKeyType()
-    {
-        return 'string';
-    }
+//    protected $primaryKey = 'uuid';
+//
+//    public function getKeyType()
+//    {
+//        return 'string';
+//    }
 
 
     public function price(): MorphMany
