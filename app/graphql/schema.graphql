@@ -103,8 +103,8 @@ type User {
 type Product {
     id: ID
     key: Int
-    value: String
     active: Boolean
+    value: String
     parentable_type: String
     parentable_id: String
     property: [Property!] @morphMany
@@ -115,7 +115,6 @@ type Product {
 type Property {
     id: ID
     key: String
-    uuid: Int
     active: Boolean
     value: String
     parentable_type: String
@@ -126,6 +125,7 @@ type Property {
 type Category {
     id: ID
     key: String
+    active: Boolean
     uuid: String
     value: String
 }
