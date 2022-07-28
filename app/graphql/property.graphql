@@ -21,7 +21,7 @@ input CreatePropertyMorphMany {
     create: [CreatePropertyInput]
 }
 input CreatePropertyInput {
-    key: String
+    key: String!
     value: String!
     slug: String!
 }

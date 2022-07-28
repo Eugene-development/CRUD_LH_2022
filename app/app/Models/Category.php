@@ -15,14 +15,6 @@ class Category extends Model
 
     protected $table = 'category';
 
-//    protected $primaryKey = 'uuid';
-//
-//    public function getKeyType()
-//    {
-//        return 'string';
-//    }
-
-
     public function product(): MorphMany
     {
         return $this->morphMany(Product::class, 'parentable');

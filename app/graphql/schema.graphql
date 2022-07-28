@@ -1,3 +1,4 @@
 #import category.graphql
 #import product.graphql
 #import property.graphql
+#import price.graphql
