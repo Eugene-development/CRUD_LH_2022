@@ -34,26 +34,9 @@ input CreateProductInput {
     parentable_id: Int
     property: CreatePropertyMorphMany
 }
-input CreatePropertyMorphMany {
-    create: [CreatePropertyInput]
-}
-input CreatePropertyInput {
-    key: String
-    value: String!
-    slug: String!
-}
 
 input UpdateProductInput {
     id: ID!
     value: String!
     property: UpdatePropertyMorphMany
-}
-input UpdatePropertyMorphMany {
-    create: [CreatePropertyInput]
-    update: [UpdatePropertyInput]
-    delete: [ID!]
-}
-input UpdatePropertyInput {
-    id: ID!
-    value: String!
 }

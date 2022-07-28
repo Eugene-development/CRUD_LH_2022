@@ -21,7 +21,3 @@ input CreateCategoryInput {
     value: String!
     slug: String
 }
-#
-#input CreateCategoryBelongsTo {
-#    create: CreateCategoryInput
-#}

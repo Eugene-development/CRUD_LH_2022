@@ -16,3 +16,22 @@ type Property {
     parentable_id: String
     parentable: Product @morphTo
 }
+
+input CreatePropertyMorphMany {
+    create: [CreatePropertyInput]
+}
+input CreatePropertyInput {
+    key: String
+    value: String!
+    slug: String!
+}
+
+input UpdatePropertyMorphMany {
+    create: [CreatePropertyInput]
+    update: [UpdatePropertyInput]
+    delete: [ID!]
+}
+input UpdatePropertyInput {
+    id: ID!
+    value: String!
+}
