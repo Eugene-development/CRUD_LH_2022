@@ -5,34 +5,6 @@ extend type Query {
     product_w(key: Int @eq, active: Boolean @eq): [Product] @all
 }
 
-extend type Mutation {
-    createProduct(input: CreateProductInput @spread): Product @create
-    updateProduct(id: ID!, value: String!): Product @update
-    deleteProduct(id: ID!): Product @delete
-}
-
-input CreateProductInput {
-    key: String!
-    active: Boolean
-    value: String!
-    slug: String
-    parentable_type: String
-    parentable_id: Int
-    #    category: CreateCategoryBelongsTo
-    property: CreatePropertyMorphMany
-
-}
-
-input CreatePropertyMorphMany {
-    create: [CreatePropertyInput]
-}
-
-input CreatePropertyInput {
-    key: String
-    value: String!
-    slug: String!
-}
-
 type Product {
     id: ID
     key: Int
@@ -46,3 +18,47 @@ type Product {
 }
 
 union Parentable = Product | Property | Category
+
+extend type Mutation {
+    createProduct(input: CreateProductInput @spread): Product @create
+    updateProduct(input: UpdateProductInput @spread): Product @update
+    deleteProduct(id: ID!): Product @delete
+}
+
+
+
+input CreateProductInput {
+    key: String!
+    active: Boolean
+    value: String!
+    slug: String
+    parentable_type: String
+    parentable_id: Int
+    #    category: CreateCategoryBelongsTo
+    property: CreatePropertyMorphMany
+}
+input CreatePropertyMorphMany {
+    create: [CreatePropertyInput]
+}
+input CreatePropertyInput {
+    key: String
+    value: String!
+    slug: String!
+}
+
+input UpdateProductInput {
+    id: ID!
+    value: String!
+}
+
+#input DeleteProductInput {
+#    id: ID!
+#    property: DeletePropertyMorphMany
+#}
+#input DeletePropertyMorphMany {
+#    delete: DeletePropertyInput
+#}
+#input DeletePropertyInput {
+#    id: ID!
+#}
+
