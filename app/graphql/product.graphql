@@ -52,20 +52,11 @@ input UpdateProductInput {
     property: UpdatePropertyMorphMany
 }
 input UpdatePropertyMorphMany {
+    create: [CreatePropertyInput]
     update: [UpdatePropertyInput]
+    delete: [ID!]
 }
 input UpdatePropertyInput {
     id: ID!
     value: String!
 }
-#input DeleteProductInput {
-#    id: ID!
-#    property: DeletePropertyMorphMany
-#}
-#input DeletePropertyMorphMany {
-#    delete: DeletePropertyInput
-#}
-#input DeletePropertyInput {
-#    id: ID!
-#}
-
