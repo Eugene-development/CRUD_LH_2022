@@ -6,7 +6,6 @@ extend type Mutation {
     createCategory(input: CreateCategoryInput @spread): Category @create
 }
 
-
 type Category {
     id: ID
     key: String
@@ -14,7 +13,6 @@ type Category {
     value: String
     slug: String
 }
-
 
 input CreateCategoryInput {
     key: String!
