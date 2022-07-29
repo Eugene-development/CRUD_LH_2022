@@ -2,3 +2,4 @@
 #import product.graphql
 #import property.graphql
 #import price.graphql
+union Parentable = Product | Property | Category
