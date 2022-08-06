@@ -17,6 +17,7 @@ type Product {
     parentable: Parentable! @morphTo
 }
 
+
 extend type Mutation {
     createProduct(input: CreateProductInput @spread): Product @create
     updateProduct(input: UpdateProductInput @spread): Product @update

@@ -1,0 +1,24 @@
+extend type Query {
+    price: [Price] @all
+}
+
+extend type Mutation {
+    createPrice(input: CreatePriceInput @spread): Price @create
+}
+
+type Price {
+    id: ID
+    key: Int
+    active: Boolean
+    value: String
+    slug: String
+    parentable_type: String
+    parentable_id: String
+    parentable: Parentable! @morphTo
+}
+
+input CreatePriceInput {
+    key: String!
+    value: String!
+    slug: String
+}

@@ -1,8 +1,8 @@
-extend type Query {
+type Query {
     category: [Category] @all
 }
 
-extend type Mutation {
+type Mutation {
     createCategory(input: CreateCategoryInput @spread): Category @create
 }
 

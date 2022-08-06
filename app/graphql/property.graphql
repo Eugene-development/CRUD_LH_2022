@@ -1,8 +1,8 @@
-type Query {
+extend type Query {
     property: [Property] @all
 }
 
-type Mutation {
+extend type Mutation {
     createProperty(input: CreatePropertyInput @spread): Property @create
 }
 
