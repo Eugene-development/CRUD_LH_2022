@@ -1,6 +1,6 @@
 extend type Query {
     products(orderBy: _ @orderBy(columns: ["value"])): [Product] @all
-    product(id:ID! @eq): Product @find
+    product(id: ID! @eq): Product @find
     product_where(key: Int @where(operator: "1234")): [Product] @all
     product_w(key: Int @eq, active: Boolean @eq): [Product] @all
 }
@@ -16,7 +16,6 @@ type Product {
     property: [Property!] @morphMany
     parentable: Parentable! @morphTo
 }
-
 
 extend type Mutation {
     createProduct(input: CreateProductInput @spread): Product @create
