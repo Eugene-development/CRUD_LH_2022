@@ -1,3 +1,9 @@
-# extend type Query {
+type Position {
+    id: ID
+    key: String
+    value: String
+}
 
-# }
+extend type Query {
+    position: [Position] @all
+}
