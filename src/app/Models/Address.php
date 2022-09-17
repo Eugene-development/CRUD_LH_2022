@@ -12,7 +12,7 @@ class Address extends Model
 
     protected $guarded = [];
 
-    protected $table = 'sddress';
+    protected $table = 'address';
 
     public function parentable(): MorphTo
     {
