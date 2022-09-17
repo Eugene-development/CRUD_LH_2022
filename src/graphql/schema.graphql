@@ -2,5 +2,7 @@
 #import product.graphql
 #import property.graphql
 #import price.graphql
+#import seoquery.graphql
+#import position.graphql
 
-union Parentable = Category | Product | Property
+union Parentable = Category | Product | Property | Seoquery | Position
