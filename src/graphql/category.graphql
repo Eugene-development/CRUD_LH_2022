@@ -1,17 +1,17 @@
-type Query {
-    category: [Category] @all
-}
-
-type Mutation {
-    createCategory(input: CreateCategoryInput @spread): Category @create
-}
-
 type Category {
     id: ID
     key: String
     active: Boolean
     value: String
     slug: String
+}
+
+type Query {
+    category: [Category] @all
+}
+
+type Mutation {
+    createCategory(input: CreateCategoryInput @spread): Category @create
 }
 
 input CreateCategoryInput {
