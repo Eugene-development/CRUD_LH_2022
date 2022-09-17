@@ -1,0 +1,9 @@
+type Seoquery {
+    id: ID
+    key: String
+    value: String
+}
+
+extend type Query {
+    seoquery: [Seoquery] @all
+}
