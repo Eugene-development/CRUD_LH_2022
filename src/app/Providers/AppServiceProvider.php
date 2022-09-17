@@ -58,7 +58,6 @@ class AppServiceProvider extends ServiceProvider
             'video' => 'App\Models\Video',
             'seoquery' => 'App\Models\Seoquery',
             'position' => 'App\Models\Position',
-
         ]);
     }
 }

@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+
 
 class Seoquery extends Model
 {
@@ -12,6 +15,11 @@ class Seoquery extends Model
     protected $guarded = [];
 
     protected $table = 'seoquery';
+
+    public function position(): MorphMany
+    {
+        return $this->morphMany(Position::class, 'parentable');
+    }
 
     public function parentable(): MorphTo
     {

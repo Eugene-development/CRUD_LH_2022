@@ -5,4 +5,4 @@
 #import seoquery.graphql
 #import position.graphql
 
-union Parentable = Category | Product | Property | Seoquery | Position
+union Parentable = Category | Product | Property
