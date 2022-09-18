@@ -1,0 +1,9 @@
+type Resource {
+    id: ID
+    key: String
+    value: String
+}
+
+extend type Query {
+    resource: [Resource] @all
+}

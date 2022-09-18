@@ -4,9 +4,9 @@ type Product {
     active: Boolean
     value: String
     slug: String
+    property: [Property!] @morphMany
     parentable_type: String
     parentable_id: String
-    property: [Property!] @morphMany
     parentable: Parentable! @morphTo
 }
 

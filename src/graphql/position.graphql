@@ -2,6 +2,10 @@ type Position {
     id: ID
     key: String
     value: String
+    created_at: String
+    parentable_type: String
+    parentable_id: String
+    parentable: Seoquery @morphTo
 }
 
 extend type Query {
