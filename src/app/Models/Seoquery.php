@@ -16,9 +16,9 @@ class Seoquery extends Model
 
     protected $table = 'seoquery';
 
-    public function position(): MorphMany
+    public function resource(): MorphMany
     {
-        return $this->morphMany(Position::class, 'parentable');
+        return $this->morphMany(Resource::class, 'parentable');
     }
 
     public function parentable(): MorphTo
