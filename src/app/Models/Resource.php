@@ -20,6 +20,10 @@ class Resource extends Model
     {
         return $this->morphMany(Position::class, 'parentable');
     }
+    // public function first_position(): MorphMany
+    // {
+    //     return $this->morphMany(Position::class, 'parentable');
+    // }
 
     public function parentable(): MorphTo
     {

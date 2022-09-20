@@ -3,6 +3,7 @@ type Resource {
     key: String
     value: String
     position: [Position!] @morphMany
+    first_position: [Position!] @morphMany
 }
 
 extend type Query {
