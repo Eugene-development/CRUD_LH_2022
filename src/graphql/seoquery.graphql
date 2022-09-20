@@ -2,7 +2,8 @@ type Seoquery {
     id: ID
     key: String
     value: String
-    resource: [Resource!] @morphMany
+    position: [Position!] @morphMany
+    # resource: [Resource!] @morphMany
     parentable_type: String
     parentable_id: String
     parentable: Resource @morphTo

@@ -21,6 +21,11 @@ class Seoquery extends Model
         return $this->morphMany(Resource::class, 'parentable');
     }
 
+    public function position(): MorphMany
+    {
+        return $this->morphMany(Position::class, 'parentable');
+    }
+
     public function parentable(): MorphTo
     {
         return $this->morphTo();

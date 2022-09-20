@@ -3,9 +3,9 @@ type Position {
     key: String
     value: String
     created_at: String
-    # parentable_type: String
-    # parentable_id: String
-    # parentable: Resource @morphTo
+    parentable_type: String
+    parentable_id: String
+    parentable: Resource @morphTo
 }
 
 extend type Query {
