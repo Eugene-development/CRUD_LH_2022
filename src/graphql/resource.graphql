@@ -2,8 +2,11 @@ type Resource {
     id: ID
     key: String
     value: String
-    position: [Position!] @morphMany
-    first_position: [Position!] @morphMany
+    seoquery: [Seoquery!] @morphMany
+    # first_position: [Position!] @morphMany
+    parentable_type: String
+    parentable_id: String
+    parentable: Project @morphTo
 }
 
 extend type Query {

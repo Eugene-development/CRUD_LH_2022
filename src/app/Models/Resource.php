@@ -16,9 +16,14 @@ class Resource extends Model
 
     protected $table = 'resource';
 
-    public function position(): MorphMany
+    // public function position(): MorphMany
+    // {
+    //     return $this->morphMany(Position::class, 'parentable');
+    // }
+
+    public function seoquery(): MorphMany
     {
-        return $this->morphMany(Position::class, 'parentable');
+        return $this->morphMany(Seoquery::class, 'parentable');
     }
     // public function first_position(): MorphMany
     // {

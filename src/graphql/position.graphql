@@ -5,7 +5,7 @@ type Position {
     created_at: String
     parentable_type: String
     parentable_id: String
-    parentable: Resource @morphTo
+    parentable: Seoquery @morphTo
 }
 
 extend type Query {
