@@ -16,10 +16,10 @@ class Resource extends Model
 
     protected $table = 'resource';
 
-    // public function position(): MorphMany
-    // {
-    //     return $this->morphMany(Position::class, 'parentable');
-    // }
+    public function position(): MorphMany
+    {
+        return $this->morphMany(Position::class, 'parentable');
+    }
 
     public function seoquery(): MorphMany
     {

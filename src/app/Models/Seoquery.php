@@ -17,10 +17,10 @@ class Seoquery extends Model
 
     protected $table = 'seoquery';
 
-    // public function resource(): MorphMany
-    // {
-    //     return $this->morphMany(Resource::class, 'parentable');
-    // }
+    public function resource(): MorphMany
+    {
+        return $this->morphMany(Resource::class, 'parentable');
+    }
 
     // public function seoposition(): MorphMany
     // {

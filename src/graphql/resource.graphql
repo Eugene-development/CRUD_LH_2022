@@ -3,7 +3,7 @@ type Resource {
     key: String
     value: String
     seoquery: [Seoquery!] @morphMany
-    # first_position: [Position!] @morphMany
+    position: [Position!] @morphMany
     parentable_type: String
     parentable_id: String
     parentable: Project @morphTo

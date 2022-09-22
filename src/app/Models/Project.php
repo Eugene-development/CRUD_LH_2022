@@ -17,10 +17,10 @@ class Project extends Model
 
     protected $table = 'project';
 
-    // public function seoquery(): MorphMany
-    // {
-    //     return $this->MorphMany(Seoquery::class, 'parentable');
-    // }
+    public function seoquery(): MorphMany
+    {
+        return $this->MorphMany(Seoquery::class, 'parentable');
+    }
 
     public function resource(): MorphMany
     {
