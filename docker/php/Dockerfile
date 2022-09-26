@@ -25,8 +25,9 @@ WORKDIR /var/www
 
 # Clear cache
 #RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
+# RUN apt install php-mysql
 # Install extensions
+RUN docker-php-ext-install  pdo_mysql 
 #RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
 #RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/  --with-jpeg-dir=/usr/include/
 
