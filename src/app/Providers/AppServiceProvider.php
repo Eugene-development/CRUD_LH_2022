@@ -29,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
             'address' => 'App\Models\Address',
             'age' => 'App\Models\Age',
             'alt' => 'App\Models\Alt',
+            'catalog' => 'App\Models\Catalog',
             'category' => 'App\Models\Category',
             'date' => 'App\Models\Date',
             'description' => 'App\Models\Description',
