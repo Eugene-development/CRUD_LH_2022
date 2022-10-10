@@ -1,4 +1,5 @@
 #import project.graphql
+#import menu.graphql
 #import catalog.graphql
 #import category.graphql
 #import product.graphql

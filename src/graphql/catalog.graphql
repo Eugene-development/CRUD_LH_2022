@@ -22,7 +22,7 @@ input CreateCatalogInput {
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int
+    parentable_id: String
     # property: CreatePropertyMorphMany
 }
 
