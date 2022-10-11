@@ -7,7 +7,7 @@ type Menu {
 }
 
 extend type Query {
-    menu(key: Int @eq): [Menu] @all
+    menu(key: String @eq): [Menu] @all
 }
 
 extend type Mutation {

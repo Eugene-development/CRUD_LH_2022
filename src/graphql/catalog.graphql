@@ -7,7 +7,7 @@ type Catalog {
 }
 
 extend type Query {
-    catalog(key: Int @eq): [Catalog] @all
+    catalog(key: String @eq): [Catalog] @all
 }
 
 extend type Mutation {
