@@ -1,6 +1,6 @@
 type Product {
     id: ID
-    key: Int
+    key: String
     active: Boolean
     value: String
     slug: String
@@ -13,8 +13,8 @@ type Product {
 extend type Query {
     products(orderBy: _ @orderBy(columns: ["value"])): [Product] @all
     product(id: ID! @eq): Product @find
-    product_where(key: Int @where(operator: "1234")): [Product] @all
-    product_w(key: Int @eq, active: Boolean @eq): [Product] @all
+    product_where(key: String @where(operator: "1234")): [Product] @all
+    product_w(key: String @eq, active: Boolean @eq): [Product] @all
 }
 
 extend type Mutation {

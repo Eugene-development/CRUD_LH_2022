@@ -1,6 +1,6 @@
 type Price {
     id: ID
-    key: Int
+    key: String
     active: Boolean
     value: String
     slug: String
