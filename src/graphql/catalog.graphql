@@ -4,10 +4,14 @@ type Catalog {
     is_active: Boolean
     slug: String
     value: String
+    created_at: String
+    updated_at: String
+    parentable: Parentable! @morphTo
 }
 
 extend type Query {
     catalog(key: String @eq): [Catalog] @all
+    catalog_one(id: ID! @eq): Catalog @find
 }
 
 extend type Mutation {
@@ -22,7 +26,7 @@ input CreateCatalogInput {
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: String
+    parentable_id: Int
     # property: CreatePropertyMorphMany
 }
 
@@ -31,6 +35,8 @@ input UpdateCatalogInput {
     key: String!
     is_active: Boolean
     value: String!
-
+    slug: String
+    parentable_type: String
+    parentable_id: Int
     # property: UpdatePropertyMorphMany
 }

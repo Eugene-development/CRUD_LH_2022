@@ -9,4 +9,11 @@
 #import seoquery.graphql
 #import position.graphql
 
-union Parentable = Category | Product | Property | Resource | Position | Project
+union Parentable =
+      Category
+    | Product
+    | Property
+    | Resource
+    | Position
+    | Project
+    | Menu
