@@ -10,8 +10,8 @@ type Catalog {
 }
 
 extend type Query {
-    catalog(key: String @eq): [Catalog] @all
-    catalog_one(id: ID! @eq): Catalog @find
+    catalog(key: String! @eq): [Catalog] @all
+    catalog_one(id: ID! @eq, key: String! @eq): Catalog @find
 }
 
 extend type Mutation {
@@ -26,7 +26,7 @@ input CreateCatalogInput {
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int!
+    parentable_id: Int
     # property: CreatePropertyMorphMany
 }
 

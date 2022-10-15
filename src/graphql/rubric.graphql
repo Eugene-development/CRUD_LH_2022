@@ -1,9 +1,9 @@
 type Rubric {
     id: ID
-    key: String
+    key: String!
     is_active: Boolean
     slug: String
-    value: String
+    value: String!
     created_at: String
     updated_at: String
     parentable: Parentable! @morphTo
@@ -11,7 +11,7 @@ type Rubric {
 
 extend type Query {
     rubric(key: String @eq): [Rubric] @all
-    rubric_one(id: ID! @eq): Rubric @find
+    rubric_one(id: ID! @eq, key: String! @eq): Rubric @find
 }
 
 extend type Mutation {
@@ -26,7 +26,7 @@ input CreateRubricInput {
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int
+    parentable_id: Int!
     # property: CreatePropertyMorphMany
 }
 
