@@ -1,6 +1,7 @@
 #import project.graphql
 #import menu.graphql
 #import catalog.graphql
+#import rubric.graphql
 #import category.graphql
 #import product.graphql
 #import property.graphql
@@ -10,10 +11,12 @@
 #import position.graphql
 
 union Parentable =
-      Category
-    | Product
-    | Property
-    | Resource
-    | Position
-    | Project
+      Project
     | Menu
+    | Catalog
+    | Rubric
+    | Category
+    | Product
+    | Property # | Price
+    | Resource # | Seoquery
+    | Position

@@ -1,6 +1,6 @@
 type Catalog {
     id: ID
-    key: String
+    key: String!
     is_active: Boolean
     slug: String
     value: String
@@ -26,7 +26,7 @@ input CreateCatalogInput {
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int
+    parentable_id: Int!
     # property: CreatePropertyMorphMany
 }
 
