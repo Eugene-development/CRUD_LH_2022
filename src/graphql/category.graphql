@@ -1,21 +1,42 @@
 type Category {
     id: ID
-    key: String
-    active: Boolean
-    value: String
+    key: String!
+    is_active: Boolean
     slug: String
+    value: String!
+    created_at: String
+    updated_at: String
+    parentable: Parentable! @morphTo
 }
 
-type Query {
-    category: [Category] @all
+extend type Query {
+    category(key: String @eq): [Category] @all
+    category_one(id: ID! @eq, key: String! @eq): Category @find
 }
 
-type Mutation {
+extend type Mutation {
     createCategory(input: CreateCategoryInput @spread): Category @create
+    updateCategory(input: UpdateCategoryInput @spread): Category @update
+    deleteCategory(id: ID!): Category @delete
 }
 
 input CreateCategoryInput {
-    key: String
+    key: String!
+    is_active: Boolean
     value: String!
     slug: String
+    parentable_type: String
+    parentable_id: Int!
+    # property: CreatePropertyMorphMany
+}
+
+input UpdateCategoryInput {
+    id: ID!
+    key: String!
+    is_active: Boolean
+    value: String!
+    slug: String
+    parentable_type: String
+    parentable_id: Int
+    # property: UpdatePropertyMorphMany
 }
