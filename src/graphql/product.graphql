@@ -1,18 +1,20 @@
 type Product {
     id: ID
-    key: String
-    active: Boolean
-    value: String
+    key: String!
+    is_active: Boolean
     slug: String
+    value: String!
+    created_at: String
+    updated_at: String
     property: [Property!] @morphMany
-    parentable_type: String
-    parentable_id: String
     parentable: Parentable! @morphTo
 }
 
 extend type Query {
+    product(key: String @eq): [Category] @all
+    product_one(id: ID! @eq, key: String! @eq): Category @find
+
     products(orderBy: _ @orderBy(columns: ["value"])): [Product] @all
-    product(id: ID! @eq): Product @find
     product_where(key: String @where(operator: "1234")): [Product] @all
     product_w(key: String @eq, active: Boolean @eq): [Product] @all
 }
@@ -25,16 +27,21 @@ extend type Mutation {
 
 input CreateProductInput {
     key: String!
-    active: Boolean
+    is_active: Boolean
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int
+    parentable_id: Int!
     property: CreatePropertyMorphMany
 }
 
 input UpdateProductInput {
     id: ID!
+    key: String!
+    is_active: Boolean
     value: String!
+    slug: String
+    parentable_type: String
+    parentable_id: Int
     property: UpdatePropertyMorphMany
 }
