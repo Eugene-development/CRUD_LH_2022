@@ -17,6 +17,7 @@ union Parentable =
     | Rubric
     | Category
     | Product
-    | Property # | Price
+    | Property
+    | Price
     | Resource # | Seoquery
     | Position

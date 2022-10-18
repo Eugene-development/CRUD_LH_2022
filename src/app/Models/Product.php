@@ -18,12 +18,15 @@ class Product extends Model
     public function property(): MorphMany
     {
         return $this->morphMany(Property::class, 'parentable');
-//        return $this->hasMany(Property::class);
+    }
+
+    public function price(): MorphMany
+    {
+        return $this->morphMany(Price::class, 'parentable');
     }
 
     public function parentable(): MorphTo
     {
         return $this->morphTo();
     }
-
 }
