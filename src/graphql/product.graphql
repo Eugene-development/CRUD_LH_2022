@@ -7,6 +7,7 @@ type Product {
     created_at: String
     updated_at: String
     price: [Price!] @morphMany
+    unit: Unit! @morphMany
     parentable: Parentable @morphTo
 }
 
@@ -30,6 +31,8 @@ input CreateProductInput {
     parentable_type: String
     parentable_id: Int!
     # property: CreatePropertyMorphMany
+    price: CreatePriceMorphMany
+    unit: CreateUnitMorphMany
 }
 
 input UpdateProductInput {

@@ -3,14 +3,13 @@ type Price {
     key: String
     active: Boolean
     value: String
-    slug: String
     parentable_type: String
     parentable_id: String
     parentable: Parentable! @morphTo
 }
 
 extend type Query {
-    price: [Price] @all
+    price: Price @all
 }
 
 extend type Mutation {
@@ -21,4 +20,8 @@ input CreatePriceInput {
     key: String!
     value: String!
     slug: String
+}
+
+input CreatePriceMorphMany {
+    create: [CreatePriceInput!]
 }

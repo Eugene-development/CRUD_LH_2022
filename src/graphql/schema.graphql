@@ -6,6 +6,7 @@
 #import product.graphql
 #import property.graphql
 #import price.graphql
+#import unit.graphql
 #import resource.graphql
 #import seoquery.graphql
 #import position.graphql
@@ -19,5 +20,6 @@ union Parentable =
     | Product
     | Property
     | Price
+    | Unit
     | Resource # | Seoquery
     | Position

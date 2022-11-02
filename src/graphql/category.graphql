@@ -6,6 +6,7 @@ type Category {
     value: String!
     created_at: String
     updated_at: String
+    product: [Product] @morphMany
     parentable: Parentable! @morphTo
 }
 

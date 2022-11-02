@@ -25,6 +25,11 @@ class Product extends Model
         return $this->morphMany(Price::class, 'parentable');
     }
 
+    public function unit(): MorphMany
+    {
+        return $this->morphMany(Unit::class, 'parentable');
+    }
+
     public function parentable(): MorphTo
     {
         return $this->morphTo();
