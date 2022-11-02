@@ -7,7 +7,7 @@ type Product {
     created_at: String
     updated_at: String
     price: [Price!] @morphMany
-    unit: Unit! @morphMany
+    unit: Unit @morphOne
     parentable: Parentable @morphTo
 }
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
@@ -25,9 +26,9 @@ class Product extends Model
         return $this->morphMany(Price::class, 'parentable');
     }
 
-    public function unit(): MorphMany
+    public function unit(): MorphOne
     {
-        return $this->morphMany(Unit::class, 'parentable');
+        return $this->morphOne(Unit::class, 'parentable');
     }
 
     public function parentable(): MorphTo
