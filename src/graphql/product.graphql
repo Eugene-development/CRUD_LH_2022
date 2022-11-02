@@ -30,7 +30,6 @@ input CreateProductInput {
     slug: String
     parentable_type: String
     parentable_id: Int!
-    # property: CreatePropertyMorphMany
     price: CreatePriceMorphMany
     unit: CreateUnitMorphMany
 }
