@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
-// TODO: health check
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/health', function () {
+    return 'Health';
 });

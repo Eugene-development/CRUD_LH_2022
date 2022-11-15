@@ -3,10 +3,10 @@ services:
 
   #PHP Service
   app:
+    # image: larux/crud-lh-2022:latest
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
-    #    image: php:7.3-fpm
     container_name: "${COMPOSE_PROJECT_NAME}_PHP"
     restart: unless-stopped
     tty: true
@@ -20,21 +20,20 @@ services:
     networks:
       - boss-network
 
-  #Nginx Service
+  # Nginx Service
   webserver:
     image: nginx:alpine
     container_name: "${COMPOSE_PROJECT_NAME}_NGINX"
     restart: unless-stopped
     tty: true
     ports:
-      - "7786:80"
+      - "7789:80"
     volumes:
       - ./:/var/www
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - boss-network
-
-#Docker Networks
+  #Docker Networks
 networks:
   boss-network:
     driver: bridge
