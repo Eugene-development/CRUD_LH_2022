@@ -12,7 +12,7 @@ type Category {
 
 extend type Query {
     category(key: String @eq): [Category] @all
-    category_one(id: ID! @eq, key: String! @eq): Category @find
+    category_one(slug: String! @eq, key: String! @eq): Category @find
 }
 
 extend type Mutation {

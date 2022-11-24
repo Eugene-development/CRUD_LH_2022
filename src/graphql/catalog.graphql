@@ -6,12 +6,13 @@ type Catalog {
     value: String
     created_at: String
     updated_at: String
+    rubric: [Rubric] @morphMany
     parentable: Parentable! @morphTo
 }
 
 extend type Query {
     catalog(key: String! @eq): [Catalog] @all
-    catalog_one(id: ID! @eq, key: String! @eq): Catalog @find
+    catalog_one(slug: String! @eq, key: String! @eq): Catalog @find
 }
 
 extend type Mutation {

@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+
 
 class Rubric extends Model
 {
@@ -13,6 +15,12 @@ class Rubric extends Model
     protected $guarded = [];
 
     protected $table = 'rubric';
+
+    public function category(): MorphMany
+    {
+        return $this->morphMany(Category::class, 'parentable');
+    }
+
 
     public function parentable(): MorphTo
     {
