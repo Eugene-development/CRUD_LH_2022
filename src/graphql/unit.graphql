@@ -9,7 +9,7 @@ type Unit {
 }
 
 extend type Query {
-    unit: Unit @all
+    unit: [Unit] @all
 }
 
 extend type Mutation {

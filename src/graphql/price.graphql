@@ -2,9 +2,7 @@ type Price {
     id: ID
     key: String
     active: Boolean
-    value: String
-    parentable_type: String
-    parentable_id: String
+    value: Int
     parentable: Parentable! @morphTo
 }
 
