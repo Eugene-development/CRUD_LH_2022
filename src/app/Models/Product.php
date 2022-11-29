@@ -31,6 +31,11 @@ class Product extends Model
         return $this->morphOne(Unit::class, 'parentable');
     }
 
+    public function image(): MorphOne
+    {
+        return $this->morphOne(Image::class, 'parentable');
+    }
+
     public function parentable(): MorphTo
     {
         return $this->morphTo();
