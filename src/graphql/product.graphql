@@ -16,6 +16,7 @@ extend type Query {
     product(key: String @eq): [Product] @all
     product_one(slug: String! @eq, key: String! @eq): Product @find
     product_price(key: String @eq): [Product] @all
+    # product_cart(id: ID @eq): [Product] @all
 }
 
 extend type Mutation {
