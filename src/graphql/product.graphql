@@ -8,6 +8,7 @@ type Product {
     updated_at: String
     price: Price @morphOne
     unit: Unit @morphOne
+    text: Text @morphOne
     image: Image @morphOne
     parentable: Parentable @morphTo
 }
