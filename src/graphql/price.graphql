@@ -12,6 +12,7 @@ extend type Query {
 
 extend type Mutation {
     createPrice(input: CreatePriceInput @spread): Price @create
+    updatePrice(input: UpdatePriceInput @spread): Price @update
 }
 
 input CreatePriceInput {
@@ -19,6 +20,15 @@ input CreatePriceInput {
     value: String!
 }
 
+input UpdatePriceInput {
+    key: String!
+    value: String!
+}
+
 input CreatePriceMorphMany {
     create: CreatePriceInput!
+}
+
+input UpdatePriceMorphMany {
+    update: UpdatePriceInput!
 }
