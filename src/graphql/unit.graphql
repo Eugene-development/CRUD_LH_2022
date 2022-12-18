@@ -19,9 +19,8 @@ extend type Mutation {
 input CreateUnitInput {
     key: String!
     value: String!
-    slug: String
 }
 
 input CreateUnitMorphMany {
-    create: [CreateUnitInput!]
+    create: CreateUnitInput!
 }

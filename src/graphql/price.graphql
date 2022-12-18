@@ -17,9 +17,8 @@ extend type Mutation {
 input CreatePriceInput {
     key: String!
     value: String!
-    slug: String
 }
 
 input CreatePriceMorphMany {
-    create: [CreatePriceInput!]
+    create: CreatePriceInput!
 }

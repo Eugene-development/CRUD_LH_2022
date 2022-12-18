@@ -28,7 +28,7 @@ extend type Mutation {
 
 input CreateProductInput {
     key: String!
-    is_active: Boolean
+    # is_active: Boolean
     value: String!
     slug: String
     parentable_type: String
