@@ -21,6 +21,10 @@ class Rubric extends Model
         return $this->morphMany(Category::class, 'parentable');
     }
 
+    public function text(): MorphMany
+    {
+        return $this->morphMany(Text::class, 'parentable');
+    }
 
     public function parentable(): MorphTo
     {

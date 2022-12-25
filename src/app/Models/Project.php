@@ -27,6 +27,11 @@ class Project extends Model
         return $this->MorphMany(Resource::class, 'parentable');
     }
 
+    public function text(): MorphMany
+    {
+        return $this->morphMany(Text::class, 'parentable');
+    }
+
     public function parentable(): MorphTo
     {
         return $this->morphTo();

@@ -20,9 +20,13 @@ class Category extends Model
         return $this->morphMany(Product::class, 'parentable');
     }
 
+    public function text(): MorphMany
+    {
+        return $this->morphMany(Text::class, 'parentable');
+    }
+
     public function parentable(): MorphTo
     {
         return $this->morphTo();
     }
-
 }

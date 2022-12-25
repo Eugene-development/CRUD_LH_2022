@@ -26,7 +26,6 @@ class Catalog extends Model
         return $this->morphMany(Text::class, 'parentable');
     }
 
-
     public function parentable(): MorphTo
     {
         return $this->morphTo();

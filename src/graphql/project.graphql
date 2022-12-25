@@ -4,6 +4,7 @@ type Project {
     value: String
     resource: [Resource!] @morphMany
     seoquery: [Seoquery!] @morphMany
+    text: [Text] @morphMany
 }
 
 extend type Query {
