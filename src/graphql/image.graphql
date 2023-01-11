@@ -11,15 +11,15 @@ extend type Query {
     image: [Image] @all
 }
 
-extend type Mutation {
-    createImage(input: CreateImageInput @spread): Image @create
-}
-
 input CreateImageInput {
     key: String!
     hash: String!
 }
 
 input CreateImageMorphMany {
-    create: [CreateImageInput!]
+    create: CreateImageInput!
+}
+
+extend type Mutation {
+    createImage(input: CreateImageInput @spread): Image @create
 }

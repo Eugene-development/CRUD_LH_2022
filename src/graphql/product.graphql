@@ -35,6 +35,7 @@ input CreateProductInput {
     parentable_id: Int!
     price: CreatePriceMorphMany
     unit: CreateUnitMorphMany
+    image: CreateImageMorphMany
 }
 
 input UpdateProductInput {
