@@ -13,7 +13,7 @@
 #import seoquery.graphql
 #import position.graphql
 #import cart.graphql
-#import seotitle.graphql
+#import seoTitle.graphql
 #import seoDescription.graphql
 
 union Parentable =
@@ -31,5 +31,5 @@ union Parentable =
     | Resource
     | Position
     | Cart
-    | Seotitle
+    | SeoTitle
     | SeoDescription

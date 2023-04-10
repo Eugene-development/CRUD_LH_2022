@@ -8,7 +8,7 @@ type Category {
     updated_at: String
     product: [Product] @morphMany
     text: [Text] @morphMany
-    seotitle: Seotitle @morphOne
+    seoTitle: SeoTitle @morphOne
     seoDescription: SeoDescription @morphOne
     parentable: Parentable! @morphTo
 }

@@ -26,9 +26,9 @@ class Category extends Model
         return $this->morphMany(Text::class, 'parentable');
     }
 
-    public function seotitle(): MorphOne
+    public function seoTitle(): MorphOne
     {
-        return $this->morphOne(Seotitle::class, 'parentable');
+        return $this->morphOne(SeoTitle::class, 'parentable');
     }
     public function seoDescription(): MorphOne
     {

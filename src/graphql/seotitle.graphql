@@ -1,4 +1,4 @@
-type Seotitle {
+type SeoTitle {
     id: ID
     key: String
     is_active: Boolean
@@ -7,5 +7,5 @@ type Seotitle {
 }
 
 extend type Query {
-    seotitle: [Seotitle] @all
+    seoTitle: [SeoTitle] @all
 }
