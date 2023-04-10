@@ -30,6 +30,10 @@ class Category extends Model
     {
         return $this->morphOne(Seotitle::class, 'parentable');
     }
+    public function seoDescription(): MorphOne
+    {
+        return $this->morphOne(SeoDescription::class, 'parentable');
+    }
 
     public function parentable(): MorphTo
     {

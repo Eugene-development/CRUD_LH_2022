@@ -1,7 +1,11 @@
 type Seotitle {
     id: ID
-    key: String!
+    key: String
     is_active: Boolean
     value: String
     parentable: Parentable @morphTo
+}
+
+extend type Query {
+    seotitle: [Seotitle] @all
 }

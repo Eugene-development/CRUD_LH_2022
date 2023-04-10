@@ -9,6 +9,7 @@ type Category {
     product: [Product] @morphMany
     text: [Text] @morphMany
     seotitle: Seotitle @morphOne
+    seoDescription: SeoDescription @morphOne
     parentable: Parentable! @morphTo
 }
 

@@ -1,0 +1,11 @@
+type SeoDescription {
+    id: ID
+    key: String
+    is_active: Boolean
+    value: String
+    parentable: Parentable @morphTo
+}
+
+extend type Query {
+    seoDescription: [SeoDescription] @all
+}
