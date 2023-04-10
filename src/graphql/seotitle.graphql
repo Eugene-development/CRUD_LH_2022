@@ -1,0 +1,7 @@
+type Seotitle {
+    id: ID
+    key: String!
+    is_active: Boolean
+    value: String
+    parentable: Parentable @morphTo
+}

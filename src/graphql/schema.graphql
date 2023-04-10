@@ -13,6 +13,7 @@
 #import seoquery.graphql
 #import position.graphql
 #import cart.graphql
+#import seotitle.graphql
 
 union Parentable =
       Project
@@ -29,3 +30,4 @@ union Parentable =
     | Resource # | Seoquery
     | Position
     | Cart
+    | Seotitle
