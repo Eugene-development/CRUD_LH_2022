@@ -32,7 +32,6 @@ input CreateCategoryInput {
     slug: String
     parentable_type: String
     parentable_id: Int!
-    # property: CreatePropertyMorphMany
 }
 
 input UpdateCategoryInput {
@@ -43,5 +42,5 @@ input UpdateCategoryInput {
     slug: String
     parentable_type: String
     parentable_id: Int
-    # property: UpdatePropertyMorphMany
+    seoTitle: UpdateSeoTitleMorphOne
 }
